@@ -1,0 +1,125 @@
+import streamlit as st
+
+# Complete dictionary of elements with atomic numbers and weights
+elements = {
+    "Actinium": {"Symbol": "Ac", "Atomic Number": 89, "Atomic Weight": 227},
+    "Aluminum": {"Symbol": "Al", "Atomic Number": 13, "Atomic Weight": 26.9815},
+    "Americium": {"Symbol": "Am", "Atomic Number": 95, "Atomic Weight": 243},
+    "Antimony": {"Symbol": "Sb", "Atomic Number": 51, "Atomic Weight": 121.75},
+    "Argon": {"Symbol": "Ar", "Atomic Number": 18, "Atomic Weight": 39.948},
+    "Arsenic": {"Symbol": "As", "Atomic Number": 33, "Atomic Weight": 74.9216},
+    "Astatine": {"Symbol": "At", "Atomic Number": 85, "Atomic Weight": 210},
+    "Barium": {"Symbol": "Ba", "Atomic Number": 56, "Atomic Weight": 137.34},
+    "Berkelium": {"Symbol": "Bk", "Atomic Number": 97, "Atomic Weight": 247},
+    "Beryllium": {"Symbol": "Be", "Atomic Number": 4, "Atomic Weight": 9.0122},
+    "Bismuth": {"Symbol": "Bi", "Atomic Number": 83, "Atomic Weight": 208.980},
+    "Boron": {"Symbol": "B", "Atomic Number": 5, "Atomic Weight": 10.811},
+    "Bromine": {"Symbol": "Br", "Atomic Number": 35, "Atomic Weight": 79.904},
+    "Cadmium": {"Symbol": "Cd", "Atomic Number": 48, "Atomic Weight": 112.40},
+    "Calcium": {"Symbol": "Ca", "Atomic Number": 20, "Atomic Weight": 40.08},
+    "Californium": {"Symbol": "Cf", "Atomic Number": 98, "Atomic Weight": 251},
+    "Carbon": {"Symbol": "C", "Atomic Number": 6, "Atomic Weight": 12.01115},
+    "Cerium": {"Symbol": "Ce", "Atomic Number": 58, "Atomic Weight": 140.12},
+    "Cesium": {"Symbol": "Cs", "Atomic Number": 55, "Atomic Weight": 132.905},
+    "Chlorine": {"Symbol": "Cl", "Atomic Number": 17, "Atomic Weight": 35.453},
+    "Chromium": {"Symbol": "Cr", "Atomic Number": 24, "Atomic Weight": 51.996},
+    "Cobalt": {"Symbol": "Co", "Atomic Number": 27, "Atomic Weight": 58.9332},
+    "Copper": {"Symbol": "Cu", "Atomic Number": 29, "Atomic Weight": 63.546},
+    "Curium": {"Symbol": "Cm", "Atomic Number": 96, "Atomic Weight": 247},
+    "Dysprosium": {"Symbol": "Dy", "Atomic Number": 66, "Atomic Weight": 162.50},
+    "Einsteinium": {"Symbol": "Es", "Atomic Number": 99, "Atomic Weight": 252},
+    "Erbium": {"Symbol": "Er", "Atomic Number": 68, "Atomic Weight": 167.26},
+    "Europium": {"Symbol": "Eu", "Atomic Number": 63, "Atomic Weight": 151.96},
+    "Fermium": {"Symbol": "Fm", "Atomic Number": 100, "Atomic Weight": 257},
+    "Fluorine": {"Symbol": "F", "Atomic Number": 9, "Atomic Weight": 18.9984},
+    "Francium": {"Symbol": "Fr", "Atomic Number": 87, "Atomic Weight": 223},
+    "Gadolinium": {"Symbol": "Gd", "Atomic Number": 64, "Atomic Weight": 157.25},
+    "Gallium": {"Symbol": "Ga", "Atomic Number": 31, "Atomic Weight": 69.72},
+    "Germanium": {"Symbol": "Ge", "Atomic Number": 32, "Atomic Weight": 72.59},
+    "Gold": {"Symbol": "Au", "Atomic Number": 79, "Atomic Weight": 196.967},
+    "Hafnium": {"Symbol": "Hf", "Atomic Number": 72, "Atomic Weight": 178.49},
+    "Helium": {"Symbol": "He", "Atomic Number": 2, "Atomic Weight": 4.0026},
+    "Holmium": {"Symbol": "Ho", "Atomic Number": 67, "Atomic Weight": 164.930},
+    "Hydrogen": {"Symbol": "H", "Atomic Number": 1, "Atomic Weight": 1.00797},
+    "Indium": {"Symbol": "In", "Atomic Number": 49, "Atomic Weight": 114.82},
+    "Iodine": {"Symbol": "I", "Atomic Number": 53, "Atomic Weight": 126.9044},
+    "Iridium": {"Symbol": "Ir", "Atomic Number": 77, "Atomic Weight": 192.2},
+    "Iron": {"Symbol": "Fe", "Atomic Number": 26, "Atomic Weight": 55.847},
+    "Krypton": {"Symbol": "Kr", "Atomic Number": 36, "Atomic Weight": 83.80},
+    "Lanthanum": {"Symbol": "La", "Atomic Number": 57, "Atomic Weight": 138.91},
+    "Lead": {"Symbol": "Pb", "Atomic Number": 82, "Atomic Weight": 207.19},
+    "Lithium": {"Symbol": "Li", "Atomic Number": 3, "Atomic Weight": 6.939},
+    "Lutetium": {"Symbol": "Lu", "Atomic Number": 71, "Atomic Weight": 174.97},
+    "Magnesium": {"Symbol": "Mg", "Atomic Number": 12, "Atomic Weight": 24.312},
+    "Manganese": {"Symbol": "Mn", "Atomic Number": 25, "Atomic Weight": 54.9380},
+    "Mendelevium": {"Symbol": "Md", "Atomic Number": 101, "Atomic Weight": 258},
+    "Mercury": {"Symbol": "Hg", "Atomic Number": 80, "Atomic Weight": 200.59},
+    "Molybdenum": {"Symbol": "Mo", "Atomic Number": 42, "Atomic Weight": 95.94},
+    "Neodymium": {"Symbol": "Nd", "Atomic Number": 60, "Atomic Weight": 144.24},
+    "Neon": {"Symbol": "Ne", "Atomic Number": 10, "Atomic Weight": 20.183},
+    "Neptunium": {"Symbol": "Np", "Atomic Number": 93, "Atomic Weight": 237},
+    "Nickel": {"Symbol": "Ni", "Atomic Number": 28, "Atomic Weight": 58.71},
+    "Niobium": {"Symbol": "Nb", "Atomic Number": 41, "Atomic Weight": 92.906},
+    "Nitrogen": {"Symbol": "N", "Atomic Number": 7, "Atomic Weight": 14.0067},
+    "Nobelium": {"Symbol": "No", "Atomic Number": 102, "Atomic Weight": 259},
+    "Osmium": {"Symbol": "Os", "Atomic Number": 76, "Atomic Weight": 190.2},
+    "Oxygen": {"Symbol": "O", "Atomic Number": 8, "Atomic Weight": 15.9994},
+    "Palladium": {"Symbol": "Pd", "Atomic Number": 46, "Atomic Weight": 106.4},
+    "Phosphorus": {"Symbol": "P", "Atomic Number": 15, "Atomic Weight": 30.9738},
+    "Platinum": {"Symbol": "Pt", "Atomic Number": 78, "Atomic Weight": 195.09},
+    "Plutonium": {"Symbol": "Pu", "Atomic Number": 94, "Atomic Weight": 244},
+    "Polonium": {"Symbol": "Po", "Atomic Number": 84, "Atomic Weight": 210},
+    "Potassium": {"Symbol": "K", "Atomic Number": 19, "Atomic Weight": 39.102},
+    "Praseodymium": {"Symbol": "Pr", "Atomic Number": 59, "Atomic Weight": 140.907},
+    "Promethium": {"Symbol": "Pm", "Atomic Number": 61, "Atomic Weight": 145},
+    "Protactinium": {"Symbol": "Pa", "Atomic Number": 91, "Atomic Weight": 231.0359},
+    "Radium": {"Symbol": "Ra", "Atomic Number": 88, "Atomic Weight": 226},
+    "Radon": {"Symbol": "Rn", "Atomic Number": 86, "Atomic Weight": 222},
+    "Rhenium": {"Symbol": "Re", "Atomic Number": 75, "Atomic Weight": 186.2},
+    "Rhodium": {"Symbol": "Rh", "Atomic Number": 45, "Atomic Weight": 102.905},
+    "Rubidium": {"Symbol": "Rb", "Atomic Number": 37, "Atomic Weight": 85.47},
+    "Ruthenium": {"Symbol": "Ru", "Atomic Number": 44, "Atomic Weight": 101.07},
+    "Samarium": {"Symbol": "Sm", "Atomic Number": 62, "Atomic Weight": 150.35},
+    "Scandium": {"Symbol": "Sc", "Atomic Number": 21, "Atomic Weight": 44.956},
+    "Selenium": {"Symbol": "Se", "Atomic Number": 34, "Atomic Weight": 78.96},
+    "Silicon": {"Symbol": "Si", "Atomic Number": 14, "Atomic Weight": 28.086},
+    "Silver": {"Symbol": "Ag", "Atomic Number": 47, "Atomic Weight": 107.868},
+    "Sodium": {"Symbol": "Na", "Atomic Number": 11, "Atomic Weight": 22.9898},
+    "Strontium": {"Symbol": "Sr", "Atomic Number": 38, "Atomic Weight": 87.62},
+    "Sulfur": {"Symbol": "S", "Atomic Number": 16, "Atomic Weight": 32.06},
+    "Tantalum": {"Symbol": "Ta", "Atomic Number": 73, "Atomic Weight": 180.948},
+    "Technetium": {"Symbol": "Tc", "Atomic Number": 43, "Atomic Weight": 98},
+    "Tellurium": {"Symbol": "Te", "Atomic Number": 52, "Atomic Weight": 127.60},
+    "Terbium": {"Symbol": "Tb", "Atomic Number": 65, "Atomic Weight": 158.925},
+    "Thallium": {"Symbol": "Tl", "Atomic Number": 81, "Atomic Weight": 204.383},
+    "Thorium": {"Symbol": "Th", "Atomic Number": 90, "Atomic Weight": 232.038},
+    "Thulium": {"Symbol": "Tm", "Atomic Number": 69, "Atomic Weight": 168.934},
+    "Tin": {"Symbol": "Sn", "Atomic Number": 50, "Atomic Weight": 118.69},
+    "Titanium": {"Symbol": "Ti", "Atomic Number": 22, "Atomic Weight": 47.867},
+    "Tungsten": {"Symbol": "W", "Atomic Number": 74, "Atomic Weight": 183.84},
+    "Uranium": {"Symbol": "U", "Atomic Number": 92, "Atomic Weight": 238.029},
+    "Vanadium": {"Symbol": "V", "Atomic Number": 23, "Atomic Weight": 50.9415},
+    "Xenon": {"Symbol": "Xe", "Atomic Number": 54, "Atomic Weight": 131.293},
+    "Ytterbium": {"Symbol": "Yb", "Atomic Number": 70, "Atomic Weight": 173.04},
+    "Yttrium": {"Symbol": "Y", "Atomic Number": 39, "Atomic Weight": 88.905},
+    "Zinc": {"Symbol": "Zn", "Atomic Number": 30, "Atomic Weight": 65.38},
+    "Zirconium": {"Symbol": "Zr", "Atomic Number": 40, "Atomic Weight": 91.224}
+}
+
+st.title("Atomic Number and Weight Finder")
+
+# Alphabetically sorted list of elements
+element_list = sorted(elements.keys())
+
+# Dropdown for selecting an element
+selected_element = st.selectbox("Select an Element", element_list)
+
+# Display atomic details
+if selected_element:
+    details = elements[selected_element]
+    st.write(f"**Element**: {selected_element}")
+    st.write(f"**Symbol**: {details['Symbol']}")
+    st.write(f"**Atomic Number**: {details['Atomic Number']}")
+    st.write(f"**Atomic Weight**: {details['Atomic Weight']}")
+
+st.write("Select an element from the dropdown to view its atomic number and weight.")
