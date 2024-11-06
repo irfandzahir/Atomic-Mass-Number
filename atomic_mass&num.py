@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Complete dictionary of elements with atomic numbers and weights
+# Updated dictionary of elements with additional elements from the image
 elements = {
     "Actinium": {"Symbol": "Ac", "Atomic Number": 89, "Atomic Weight": 227},
     "Aluminum": {"Symbol": "Al", "Atomic Number": 13, "Atomic Weight": 26.9815},
@@ -86,24 +86,24 @@ elements = {
     "Silver": {"Symbol": "Ag", "Atomic Number": 47, "Atomic Weight": 107.868},
     "Sodium": {"Symbol": "Na", "Atomic Number": 11, "Atomic Weight": 22.9898},
     "Strontium": {"Symbol": "Sr", "Atomic Number": 38, "Atomic Weight": 87.62},
-    "Sulfur": {"Symbol": "S", "Atomic Number": 16, "Atomic Weight": 32.06},
+    "Sulfur": {"Symbol": "S", "Atomic Number": 16, "Atomic Weight": 32.064},
     "Tantalum": {"Symbol": "Ta", "Atomic Number": 73, "Atomic Weight": 180.948},
     "Technetium": {"Symbol": "Tc", "Atomic Number": 43, "Atomic Weight": 98},
     "Tellurium": {"Symbol": "Te", "Atomic Number": 52, "Atomic Weight": 127.60},
-    "Terbium": {"Symbol": "Tb", "Atomic Number": 65, "Atomic Weight": 158.925},
-    "Thallium": {"Symbol": "Tl", "Atomic Number": 81, "Atomic Weight": 204.383},
+    "Terbium": {"Symbol": "Tb", "Atomic Number": 65, "Atomic Weight": 158.924},
+    "Thallium": {"Symbol": "Tl", "Atomic Number": 81, "Atomic Weight": 204.37},
     "Thorium": {"Symbol": "Th", "Atomic Number": 90, "Atomic Weight": 232.038},
     "Thulium": {"Symbol": "Tm", "Atomic Number": 69, "Atomic Weight": 168.934},
     "Tin": {"Symbol": "Sn", "Atomic Number": 50, "Atomic Weight": 118.69},
-    "Titanium": {"Symbol": "Ti", "Atomic Number": 22, "Atomic Weight": 47.867},
-    "Tungsten": {"Symbol": "W", "Atomic Number": 74, "Atomic Weight": 183.84},
-    "Uranium": {"Symbol": "U", "Atomic Number": 92, "Atomic Weight": 238.029},
-    "Vanadium": {"Symbol": "V", "Atomic Number": 23, "Atomic Weight": 50.9415},
-    "Xenon": {"Symbol": "Xe", "Atomic Number": 54, "Atomic Weight": 131.293},
+    "Titanium": {"Symbol": "Ti", "Atomic Number": 22, "Atomic Weight": 47.90},
+    "Tungsten": {"Symbol": "W", "Atomic Number": 74, "Atomic Weight": 183.85},
+    "Uranium": {"Symbol": "U", "Atomic Number": 92, "Atomic Weight": 238.03},
+    "Vanadium": {"Symbol": "V", "Atomic Number": 23, "Atomic Weight": 50.942},
+    "Xenon": {"Symbol": "Xe", "Atomic Number": 54, "Atomic Weight": 131.30},
     "Ytterbium": {"Symbol": "Yb", "Atomic Number": 70, "Atomic Weight": 173.04},
     "Yttrium": {"Symbol": "Y", "Atomic Number": 39, "Atomic Weight": 88.905},
-    "Zinc": {"Symbol": "Zn", "Atomic Number": 30, "Atomic Weight": 65.38},
-    "Zirconium": {"Symbol": "Zr", "Atomic Number": 40, "Atomic Weight": 91.224}
+    "Zinc": {"Symbol": "Zn", "Atomic Number": 30, "Atomic Weight": 65.37},
+    "Zirconium": {"Symbol": "Zr", "Atomic Number": 40, "Atomic Weight": 91.22}
 }
 
 st.title("Atomic Number and Weight Finder")
